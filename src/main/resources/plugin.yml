@@ -1,0 +1,10 @@
+name: TWarp
+version: '${project.version}'
+main: com.tracer0219.twarp.TWarp
+api-version: 1.16
+depend: [ Vault, WorldGuard ]
+authors: [ Tracer ]
+commands:
+  twarp:
+    usage: NOT LEGAL
+

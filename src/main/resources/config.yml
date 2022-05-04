@@ -1,0 +1,25 @@
+settings:
+  release_time: 5
+warps:
+  A: #传送点名称
+    world: 'world'
+    x: 70
+    y: 90
+    z: 70
+    pitch: 18.5
+    yaw: 108.3
+    x_length: 16
+    y_length: 16
+    z_length: 16
+    require:
+      money: 100 #传送点使用一次所需vault金币
+      items:
+        a: #一个存储节点名称可以无视
+        #...具体物品信息
+        b: #...具体物品信息
+worldguard:
+  green_test:
+    - A
+players:
+  0874: ##uuid
+    - 'A'
