@@ -18,6 +18,11 @@ public class UnlockRegion{
                 '}';
     }
 
+    @Override
+    protected UnlockRegion clone(){
+        return new UnlockRegion(this.x,this.y,this.z);
+    }
+
     public int getX() {
         return x;
     }

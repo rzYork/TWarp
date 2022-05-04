@@ -16,9 +16,11 @@ public class Warp {
     public Warp(String name,Location loc, UnlockRegion region, double money, List<ItemStack> items) {
         this.name=name;
         this.loc = loc;
-        this.region = region;
+        this.region = region.clone();
         this.money = money;
-        this.items = items;
+        this.items = new ArrayList<ItemStack>();
+        if(items!=null)
+            this.items.addAll(items);
     }
 
     private UnlockRegion region;

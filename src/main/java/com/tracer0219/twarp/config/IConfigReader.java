@@ -10,6 +10,12 @@ public interface IConfigReader {
     int getReleaseTime();
     Warp getWarp(String warpName);
     List<Warp> getWarps();
+
+    /**
+     *
+     * @param warp
+     * @return modify but not create if true
+     */
     boolean setWarpLoc(Warp warp);
     List<Warp> getAvailableWarps(List<String> regionNames);
     List<Warp> getUnlockedWarps(OfflinePlayer p);

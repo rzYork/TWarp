@@ -2,9 +2,13 @@ name: TWarp
 version: '${project.version}'
 main: com.tracer0219.twarp.TWarp
 api-version: 1.16
-depend: [ Vault, WorldGuard ]
+depend: [ Vault, WorldGuard,TPVP]
 authors: [ Tracer ]
 commands:
   twarp:
     usage: NOT LEGAL
-
+permissions:
+  twarp.admin:
+    default: op
+  twarp.use:
+    default: true

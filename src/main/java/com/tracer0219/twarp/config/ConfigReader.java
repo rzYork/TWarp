@@ -100,6 +100,8 @@ public class ConfigReader implements IConfigReader {
         warpSec.set("z_length", region.getZ());
 
 
+        instance.saveConfig();
+
 
         return exists;
 
@@ -138,6 +140,7 @@ public class ConfigReader implements IConfigReader {
         HashSet<String> set = new HashSet<>(config.getStringList("players." + s));
         set.add(warp.getName());
         config.set("players."+s,new ArrayList<>(set));
+        instance.saveConfig();
     }
 
     @Override
@@ -146,6 +149,7 @@ public class ConfigReader implements IConfigReader {
         HashSet<String> set = new HashSet<>(config.getStringList("players." + s));
         set.remove(warp.getName());
         config.set("players."+s,new ArrayList<>(set));
+        instance.saveConfig();
     }
 
     @Override
@@ -163,6 +167,7 @@ public class ConfigReader implements IConfigReader {
         for (ItemStack item : stacks) {
             warpSec.set("require.items."+item.hashCode(),item);
         }
+        instance.saveConfig();
         return true;
     }
 }
