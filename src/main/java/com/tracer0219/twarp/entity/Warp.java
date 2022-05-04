@@ -10,20 +10,34 @@ import java.util.stream.Collectors;
 
 public class Warp {
 
+    @Override
+    public Warp clone() {
+        List<ItemStack> clones=new ArrayList<>();
+        for (ItemStack item : items) {
+            clones.add(item.clone());
+        }
+        return new Warp(name,loc.clone(),distance,money,clones);
+    }
+
     private Location loc;
     private String name;
 
-    public Warp(String name,Location loc, UnlockRegion region, double money, List<ItemStack> items) {
+    public Warp(String name,Location loc, int distance, double money, List<ItemStack> items) {
         this.name=name;
         this.loc = loc;
-        this.region = region.clone();
+        this.distance=distance;
         this.money = money;
         this.items = new ArrayList<ItemStack>();
         if(items!=null)
             this.items.addAll(items);
     }
 
-    private UnlockRegion region;
+    private int distance;
+
+    public int getDistance() {
+        return distance;
+    }
+
     private double money;
     private List<ItemStack> items;
 
@@ -32,7 +46,6 @@ public class Warp {
     public String toString() {
         return "Warp{" +
                 "loc=" + loc +
-                ", region=" + region +
                 ", money=" + money +
                 ", items=" + StringUtils.join(items.stream().map(ItemStack::toString).collect(Collectors.toList()).toArray(new String[0]), ",") +
                 '}';
@@ -51,13 +64,7 @@ public class Warp {
     }
 
 
-    public UnlockRegion getRegion() {
-        return new UnlockRegion(region.x, region.y, region.z);
-    }
 
-    public void setRegion(UnlockRegion region) {
-        this.region = region;
-    }
 
     public double getMoney() {
         return money;

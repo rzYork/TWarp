@@ -8,9 +8,7 @@ warps:
     z: 70
     pitch: 18.5
     yaw: 108.3
-    x_length: 16
-    y_length: 16
-    z_length: 16
+    distance: 16
     require:
       money: 100 #传送点使用一次所需vault金币
       items:
